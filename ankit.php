@@ -1,3 +1,3 @@
 <?php
-echo "PHP CODE";
+echo "PHP CODE FILE";
 ?>
