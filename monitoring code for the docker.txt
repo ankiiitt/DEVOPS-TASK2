@@ -1,0 +1,19 @@
+while true
+do
+if sudo docker ps | grep httpdinterpreter 
+then 
+echo "DON'T WORRY YOUR HTML INTERPRETER ENVIRONMENT IS RUNNING"
+else
+docker start httpdinterpreter 
+fi 
+done 
+
+while true
+do
+if sudo docker ps | grep phpinterpreter 
+then 
+echo "DON'T WORRY YOUR PHP INTERPRETER ENVIRONMENT IS RUNNING"
+else
+docker start phpinterpreter 
+fi
+done

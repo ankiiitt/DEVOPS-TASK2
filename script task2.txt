@@ -1,0 +1,37 @@
+if sudo ls /root/task2 | grep .html
+then 
+if sudo docker ps | grep httpdinterpreter 
+then 
+echo "YOU HTML INTERPRETER ENVIRONMENT IS RUNNING"
+else
+sudo docker run -dit -p 8085:80 -v /root/task2:/usr/local/apache2/htdocs --name httpdinterpreter httpd
+fi 
+else 
+echo "THERE IS NO HTML FILE"
+fi 
+
+if sudo ls /root/task2 | grep .php
+then 
+if sudo docker ps | grep phpinterpreter 
+then 
+echo "YOUR PHP INTERPRETER ENVIRONMENT IS RUNNING"
+else
+sudo docker run -dit -p 8086:80 -v /root/task2:/var/www/html --name phpinterpreter centos:7
+fi
+else 
+echo "THERE IS NO PHP FILE"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+if sudo docker ps | grep httpdinterpreter
+then 
+status_html=$(curl -o /dev/null -w "%{http_code}" -s 192.168.43.171:8085/ankit.html)
+if [[ $status_html == 200 ]]
+then 
+	exit 0
+else 
+	 exit 1
+fi 
+else 
+echo "OPPS HTTPDINTERPRETER IS NOT RUNNING !!!"
+fi 
+
+if sudo docker ps | grep phpinterpreter 
+then
+status_php=$(curl -o /dev/null -w "%{http_code}" -s 192.168.43.171:8085/ankit.php)
+if [[ $status_php == 200 ]]
+then 
+	exit 0
+else 
+	 exit 1
+fi 
+else
+echo "OPPS PHPINTERPRETER IS NOT RUNNING !!!" 
+fi 
