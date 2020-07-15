@@ -1,3 +1,3 @@
 <?php
-echo "PHP CODE FILE TESTING";
+echo "PHP CODE FILE TESTING..";
 ?>
